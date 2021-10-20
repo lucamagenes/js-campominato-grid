@@ -27,14 +27,18 @@ function cellGenerator(number) {
     var number
     var x
 
+    //condizione per la selezione del livello
     if (number === 1) {
         x = 100;
+        //aggiungere classe in base agli elementi generati
         containerEl.classList.add('cont_uno')
     } else if (number === 2) {
         x = 81;
+        //aggiungere classe in base agli elementi generati
         containerEl.classList.add('cont_due')
     } else if (number === 3) {
         x = 49;
+        //aggiungere classe in base agli elementi generati
         containerEl.classList.add('cont_tre')
     }
 
