@@ -15,23 +15,44 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 //selezionare l'elemento della DOM 
 const containerEl = document.querySelector('.container');
-console.log(containerEl);
 
-//generare gli elementi con un loop
-for (let i = 0; i < 100; i++) {
-
-    //creare gli elementi da generare
-    const cellEl = document.createElement('div');
-    console.log(cellEl);
-    //attribuire una classe all'elemto creato
-    cellEl.className = 'grid_cell';
-    //appendere gli elementi generati all'elemento selezionato dalla DOM 
-    containerEl.append(cellEl);
+const userLevel = parseInt(prompt('Seleziona il livello di difficoltà', '[1/2/3]'));
 
 
+cellGenerator(userLevel)
 
-    //aggiungere un eventListener agli elementi
-    cellEl.addEventListener('click', function () {
-        this.style.backgroundColor = '#03a9f4'
-    })
+
+//funzione per generare le celle
+function cellGenerator(number) {
+
+    var number
+    var x
+
+    if (number === 1) {
+        x = 100;
+    } else if (number === 2) {
+        x = 81;
+    } else if (number === 3) {
+        x = 49;
+    }
+
+
+    //generare gli elementi con un loop
+    for (let i = 0; i < x; i++) {
+
+        //creare gli elementi da generare
+        const cellEl = document.createElement('div');
+        //attribuire una classe all'elemto creato
+        cellEl.className = 'grid_cell';
+        //appendere gli elementi generati all'elemento selezionato dalla DOM 
+        containerEl.append(cellEl);
+
+
+
+        //aggiungere un eventListener agli elementi
+        cellEl.addEventListener('click', function () {
+            this.style.backgroundColor = '#03a9f4'
+        })
+    }
 }
+
