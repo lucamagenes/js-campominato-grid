@@ -9,11 +9,21 @@ body {
 }
 
 .container {
-    width: 500px;
-    min-width: 500px;
     margin: 5rem auto;
     display: flex;
     flex-wrap: wrap;
+}
+
+.cont_uno {
+    width: 500px;
+}
+
+.cont_due {
+    width: 450px;
+}
+
+.cont_tre {
+    width: 350px;
 }
 
 .grid_cell {

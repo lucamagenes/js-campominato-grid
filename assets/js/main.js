@@ -30,10 +30,13 @@ function cellGenerator(number) {
 
     if (number === 1) {
         x = 100;
+        containerEl.classList.add('cont_uno')
     } else if (number === 2) {
         x = 81;
+        containerEl.classList.add('cont_due')
     } else if (number === 3) {
         x = 49;
+        containerEl.classList.add('cont_tre')
     }
 
 
