@@ -31,3 +31,9 @@ body {
     height: 50px;
     border: 1px solid white;
 }
+
+.numeri {
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}

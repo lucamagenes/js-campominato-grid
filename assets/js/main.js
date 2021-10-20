@@ -18,7 +18,6 @@ const containerEl = document.querySelector('.container');
 
 const userLevel = parseInt(prompt('Seleziona il livello di difficoltà', '[1/2/3]'));
 
-
 cellGenerator(userLevel)
 
 
@@ -41,12 +40,14 @@ function cellGenerator(number) {
 
 
     //generare gli elementi con un loop
-    for (let i = 0; i < x; i++) {
+    for (let i = 1; i <= x; i++) {
 
         //creare gli elementi da generare
-        const cellEl = document.createElement('div');
+        let cellEl = document.createElement('div');
         //attribuire una classe all'elemto creato
         cellEl.className = 'grid_cell';
+        //assegnare il valore ${i} ad ogni elemento
+        cellEl.insertAdjacentHTML('beforeend', `<p class="numeri"> ${i} </p>`)
         //appendere gli elementi generati all'elemento selezionato dalla DOM 
         containerEl.append(cellEl);
 
