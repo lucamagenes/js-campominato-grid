@@ -24,14 +24,14 @@ for (let i = 0; i < 100; i++) {
     const cellEl = document.createElement('div');
     console.log(cellEl);
     //attribuire una classe all'elemto creato
-    cellEl.classList.add('grid_cell')
+    cellEl.className = 'grid_cell';
     //appendere gli elementi generati all'elemento selezionato dalla DOM 
-    containerEl.append(cellEl)
+    containerEl.append(cellEl);
 
+
+
+    //aggiungere un eventListener agli elementi
+    cellEl.addEventListener('click', function () {
+        this.style.backgroundColor = '#03a9f4'
+    })
 }
-
-
-
-
-
-//aggiungere un eventListener agli elementi
