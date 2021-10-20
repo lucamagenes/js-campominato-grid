@@ -16,9 +16,16 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 //selezionare l'elemento della DOM 
 const containerEl = document.querySelector('.container');
 
-const userLevel = parseInt(prompt('Seleziona il livello di difficoltà', '[1/2/3]'));
+const livelloSelect = document.getElementById('livello');
+const buttonInput = document.getElementById('button');
 
-cellGenerator(userLevel)
+const userLevel = livelloSelect.value;
+
+buttonInput.addEventListener('click', function () {
+    cellGenerator(userLevel)
+
+})
+
 
 
 //funzione per generare le celle
@@ -28,15 +35,15 @@ function cellGenerator(number) {
     var x
 
     //condizione per la selezione del livello
-    if (number === 1) {
+    if (number === '1') {
         x = 100;
         //aggiungere classe in base agli elementi generati
         containerEl.classList.add('cont_uno')
-    } else if (number === 2) {
+    } else if (number === '2') {
         x = 81;
         //aggiungere classe in base agli elementi generati
         containerEl.classList.add('cont_due')
-    } else if (number === 3) {
+    } else if (number === '3') {
         x = 49;
         //aggiungere classe in base agli elementi generati
         containerEl.classList.add('cont_tre')
