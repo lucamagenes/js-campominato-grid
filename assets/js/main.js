@@ -24,9 +24,48 @@ buttonInput.addEventListener('click', function () {
 
     const userLevel = parseInt(livelloSelect.value);
 
+    /* let numeroCelle;
+
+    if (userLevel == 1) {
+        console.log('facile');
+        numeroCelle = 100;
+    } else if (userLevel == 2) {
+        console.log('medio');
+        numeroCelle = 81;
+    } else if (userLevel == 3) {
+        console.log('difficile');
+        numeroCelle = 49;
+    } */
+
+    containerEl.innerHTML = ''
+
     cellGenerator(userLevel)
 
 })
+/* 
+function generateBombs(params) {
+    const bombs = [];
+    //ciclo 16
+    while (bombs.length < 16) {
+        //genera un numero casuale tra un min e un max
+        const randomNumber = getRandomNumber(1, x)
+        //verifica se il numero è gia incluso se non lo è aggiungilo
+        if (!bombs.includes(randomNumber)) {
+            bombs.push(randomNumber)
+        }
+
+    }
+    return
+}
+
+const bombs = generateBombs()
+
+//math random
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+ */
+
 
 
 
@@ -34,19 +73,22 @@ buttonInput.addEventListener('click', function () {
 function cellGenerator(number) {
 
     var number
-    var x
+    var x, y;
 
     //condizione per la selezione del livello
     if (number == 1) {
         x = 100;
+        y = 10;
         //aggiungere classe in base agli elementi generati
         containerEl.classList.add('cont_uno')
     } else if (number == 2) {
         x = 81;
+        y = 9;
         //aggiungere classe in base agli elementi generati
         containerEl.classList.add('cont_due')
     } else if (number == 3) {
         x = 49;
+        y = 7;
         //aggiungere classe in base agli elementi generati
         containerEl.classList.add('cont_tre')
     }
@@ -58,7 +100,8 @@ function cellGenerator(number) {
         //creare gli elementi da generare
         let cellEl = document.createElement('div');
         //attribuire una classe all'elemto creato
-        cellEl.className = 'grid_cell';
+        cellEl.classList.add('grid_cell');
+        cellEl.style.cssText = `width: calc(100% / ${y}; height: calc(100% / ${y})`
         //assegnare il valore ${i} ad ogni elemento
         cellEl.insertAdjacentHTML('beforeend', `<p class="numeri"> ${i} </p>`)
         //appendere gli elementi generati all'elemento selezionato dalla DOM 
